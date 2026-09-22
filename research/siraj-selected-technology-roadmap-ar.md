@@ -104,6 +104,21 @@ task/
 - تنبيه أمني: Quick Start الرسمي يستخدم `seccomp=unconfined`، لذلك لا نعتبره حاجزًا أمنيًا موثوقًا قبل Threat Model واختبار هروب/صلاحيات مستقل.
 - القرار: **احتفاظ مشروط كتجربة أمنية بعد ECC، دون تثبيت حالي.**
 
+### P2.7. Project NOMAD — عقدة معرفة محلية مؤجلة
+
+- المصدر: [Crosstalk-Solutions/project-nomad](https://github.com/Crosstalk-Solutions/project-nomad).
+- الدور المقترح: **Offline Knowledge Node** تابع لـSIRAJ Core، وليس Core أو Router أو Agent مستقلًا.
+- المكونات المفيدة: Kiwix للمراجع، Qdrant وRAG للمستندات، Kolibri للتعليم، ProtoMaps للخرائط، وإدارة تطبيقات Docker من واجهة واحدة.
+- يمكن ربط مساعده لاحقًا بخادم متوافق مع OpenAI مثل LM Studio بدل تكرار النماذج.
+- لا يثبت الآن على ASUS أو Samsung بسبب Docker وMySQL وRedis وQdrant، ضغط RAM والتخزين، واعتماد Windows على WSL2 المدعوم مجتمعيًا.
+- لا يُعرض مباشرة على الإنترنت؛ المشروع لا يوفر مصادقة مستخدمين مدمجة حاليًا.
+- شروط التقييم اللاحق:
+  - اكتمال ATLAS v0.4 واستقرار موارد ASUS.
+  - جهاز Linux ثابت أو عقدة مخصصة بذاكرة وتخزين مناسبين.
+  - تشغيل الخدمات المطلوبة فقط مع منافذ محلية وحدود موارد.
+  - ربط الحالة والأحداث بـSIRAJ Core وFlight Recorder دون إنشاء مصدر حقيقة ثانٍ.
+- القرار: **محفوظ كمرشح P2.7؛ لا تنزيل ولا تثبيت حاليًا.**
+
 ### P3. DSPy — مختبر التحسين
 
 لا يبدأ إلا بعد توفر:
@@ -168,6 +183,7 @@ task/
 | VibeRaven | فحوص الجاهزية والأدلة |
 | ClawFlows | صيغة workflow منتقاة |
 | agent-infra/sandbox | مرشح Quarantine Execution بعد المراجعة الأمنية |
+| Project NOMAD | مرشح Offline Knowledge Node بعد استقرار الموارد وتوفر Linux مناسب |
 | GEO/Income playbooks | تصميم خدمة دخل صغيرة |
 
 ## 6. ما أُخرج من الخطة
